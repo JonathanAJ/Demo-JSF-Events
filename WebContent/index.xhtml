@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html">
+	<h:head>
+		<title>Demo JSF Events</title>
+	</h:head>
+	
+	<h:body>
+		<h:outputText value ="#{horarioAtual.horario}" />
+		
+		<h:form>
+			<h:outputLabel for="nome" value="Digite seu nome"/>
+			<h:inputText id="nome" value="#{principal.nome}" />
+			<h:commandButton action="#{principal.digaOi}" value="Enviar"/>
+		</h:form>
+		
+		<h:outputText value="Oi #{principal.nome}" rendered="#{not empty principal.nome}"/>
+        
+	</h:body>
+</html>

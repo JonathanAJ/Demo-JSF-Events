@@ -2,7 +2,9 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+	
 	<h:head>
 		<title>Demo JSF Events</title>
 	</h:head>
@@ -12,11 +14,18 @@
 		
 		<h:form>
 			<h:outputLabel for="nome" value="Digite seu nome"/>
-			<h:inputText id="nome" value="#{principal.nome}" />
+			<h:inputText id="nome" value="#{principal.nome}">
+				<f:ajax event="keyup" render="exibeNome" execute="@this"/>
+			</h:inputText>
 			<h:commandButton action="#{principal.digaOi}" value="Enviar"/>
 		</h:form>
 		
-		<h:outputText value="Oi #{principal.nome}" rendered="#{not empty principal.nome}"/>
+		<h:outputText id="exibeNome" value="Oi #{principal.nome}"/>
+		
+		<h:selectOneListbox>
+			
+		</h:selectOneListbox>
         
 	</h:body>
+	
 </html>

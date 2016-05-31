@@ -17,7 +17,7 @@ public class Principal {
 	
 	public String digaOi(){
 		
-		return "a";
+		return "oi.xhtml";
 	}
 
 }
